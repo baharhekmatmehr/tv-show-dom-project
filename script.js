@@ -8,6 +8,8 @@ acc.style.flexWrap="wrap";
 acc.style.justifyContent="space-between";
 
 
+ let sel =document.createElement("select")
+ //sel.innerHTML ="select one of season!"
 
 const myfunc = async () =>{
  try{
@@ -31,13 +33,13 @@ acc.append(divv)
 access.append(acc);
 
 
-let sel =document.createElement("select")
-sel.innerText="select one of season!"
+/////////////////////////select//////////////////////////////
+
+
 let opt =document.createElement("option")
-sel.innerText="select one of season!"
-  opt.innerHTML=myapi.data[i].season;
-  let seltosel =document.createElement("option")
-  seltosel.innerText=myapi.data[i].number;
+opt.innerHTML=`S0${myapi.data[i].season}E0${myapi.data[i].number} - ${myapi.data[i].name}`;
+  //let seltosel =document.createElement("option")
+  //seltosel.innerText=myapi.data[i].number;
   
  sel.append(opt)
  acce.append(sel)
@@ -50,4 +52,6 @@ console.log("error",err);
  }
 }
 myfunc();
+
+
 
