@@ -9,7 +9,7 @@ acc.style.justifyContent="space-between";
 
 
  let sel =document.createElement("select")
- //sel.innerHTML ="select one of season!"
+ sel.innerHTML =`select one of season!`
 
 const myfunc = async () =>{
  try{
@@ -37,15 +37,26 @@ access.append(acc);
 
 
 let opt =document.createElement("option")
+opt.classList="opption"
 opt.innerHTML=`S0${myapi.data[i].season}E0${myapi.data[i].number} - ${myapi.data[i].name}`;
   //let seltosel =document.createElement("option")
   //seltosel.innerText=myapi.data[i].number;
   
  sel.append(opt)
  acce.append(sel)
- access.append(acce);
+ 
 //acc.append(navv)
 }
+//////////////////////////////////search///////////////////////
+ let lab = document.createElement("label")
+ let inp = document.createElement("input")
+ //inp.formTarget.type="search" dn
+ for (let i=0;i<myapi.data.length ;i++ ){
+   let search = myapi[i].innerHTML.tolowerCase().include()
+ }
+ lab.append(inp)
+ acce.append(lab)
+ access.append(acce);
  }
  catch(err){
 console.log("error",err);
@@ -53,5 +64,9 @@ console.log("error",err);
 }
 myfunc();
 
+acce.addEventListener("change" , () =>{
+  let optt = document.getElementsByClassName("opption")
 
+
+})
 
