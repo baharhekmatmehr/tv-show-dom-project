@@ -1,18 +1,16 @@
 .cards{
     border-radius: 20px 20px;
-    background-color: blue;
+    background-color: black;
     color: red;
      width: 300px;
      margin-top: 50px;
      text-align: center ;
      cursor: grab;
+   
 }
 .imagee{
     border-radius: 20px 20px;
 }
 .acces{
     margin-top: 1px;
-}
-.select{
-
 }
