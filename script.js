@@ -3,16 +3,21 @@ let access = document.querySelector(".container")
 //let acc=document.querySelector(".boddy")
 let acce =document.querySelector(".headerr")
 
-/////////////////////somestyle///////////////////
+/* -------------------------------------------------------------------------- */
+/*                                  somestyle                                 */
+/* -------------------------------------------------------------------------- */
 access.style.display="flex";
 access.style.flexWrap="wrap";
 access.style.justifyContent="space-between";
-//////////////////////endsomestyle//////////
+/* -------------------------------------------------------------------------- */
+/*                                endsomestyle                                */
+/* -------------------------------------------------------------------------- */
 
+ 
 const myfunc = async () =>{
  try {
 //let myapi = await axios.get( "https://api.tvmaze.com/shows/5/episodes ")
-const myapi = await apiapi();
+const myapi =  apiapi();
 let sel = document.createElement("select")
 for(let i of myapi){
  let divv = document.createElement("div")
@@ -41,7 +46,9 @@ opt.innerHTML=`S0${i.season}E0${i.number} - ${i.name}`;
  acce.append(sel)
 }
 
-/////////////////////////select////////////////////
+/* -------------------------------------------------------------------------- */
+/*                                   select                                   */
+/* -------------------------------------------------------------------------- */
 
 sel.addEventListener("change" , () =>{
   let divvv=document.getElementsByClassName("cards")
@@ -63,83 +70,50 @@ sel.addEventListener("change" , () =>{
 }
 })
 acce.append(sel)
- ///////////////////////end of select///////////////
- ///////////////////////search ////////////////////
-let lab = document.createElement("label")
- let inp = document.createElement("input")
- inp.classList="innput";
- 
- inp.addEventListener("keyup" , ()=>{
-let car=document.getElementsByClassName("cards")
-let inpp= inp.value.toLowerCase()
-
-  for (let i=0 ;i<car.length ;i++ ){
-    let search = car[i].innerHTML.toLowerCase()
-    let ser= search.includes(inpp)
-    if (ser ){
-      car[i].style.display="block"
-
-    }
-    else{
-      car[i].style.display="none";
-    }
- }
- })
- lab.append(inp)
- acce.append(lab)
+ /* -------------------------------------------------------------------------- */
+ /*                                end of select                               */
+ /* -------------------------------------------------------------------------- */
  access.append(acce);
-//////////////////////end of search//////////////////
-inp.addEventListener("keyup" ,()=>{
-let caar=document.getElementsByClassName("cards")
-//let inputp= document.getElementsByClassName("innput").value.toLowerCase();
-let inn =inp.value.toLowerCase()
-//console.log(inn);
-let num=0;
-for(let i=0 ; i<caar.length ;i++){
-  
-  if(!caar[i].innerHTML.toLowerCase().includes(inn)){
-    caar[i].style.display="none";
-    num++;
-  }else{
-    caar[i].style.display="block";
-  }
-
-  lab.innerHTML=`${num}/${caar.length}`
-  console.log(lab);
-}
-inp.append(inn)
-})
-//inp.append(inn)
-//  
-//    inppp= inp.value.toLowerCase().includes(inpp)
-//    let container=0;
-//    let khor = document.createElement("div")
-//    while(caar.length !== null){
-//      if ((document.documentElement.textContent || 
-//       document.documentElement.innerText
-//   ).indexOf('Done successfuly') > -1
-// ) {
-//    container++;
-//     let khorj =`adad : ${container++}`
-//   // Do something...
-// }
-//     //  if(inppp){
-//     //   
-//     //  }
-     
-//     lab.append(khor)
-//      lab.append(inpp)
-
-//    }
-//  })
-
-
  }
  catch(err){
 console.log("error",err);
  }
 }
 myfunc();
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    search                                   */
+/* -------------------------------------------------------------------------- */
+
+let inputt =document.querySelector("#inputhead")
+let lab = document.createElement("label")
+inputt.addEventListener("keyup" ,()=>{
+    let inputt =document.querySelector("#inputhead")
+    inputt=inputt.value.toLowerCase()
+    console.log(inputt);
+    let num = 0;
+    let me =document.getElementsByClassName("cards")
+    for(let i=0 ; i<me.length ; i++){
+        if(!me[i].innerHTML.toLowerCase().includes(inputt)){
+     me[i].style.display="none";
+    
+   }else{
+     me[i].style.display="block";
+    num++;
+  }
+
+    }
+lab.innerHTML=`${num} / ${me.length}`
+    
+}
+)
+acce.append(lab)
+ 
+/* -------------------------------------------------------------------------- */
+/*                                end of search                               */
+/* -------------------------------------------------------------------------- */
 
 function apiapi(){
   return [
