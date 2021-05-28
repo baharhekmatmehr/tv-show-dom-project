@@ -1,17 +1,64 @@
 
-let access = document.querySelector(".container")
-//let acc=document.querySelector(".boddy")
-let acce =document.querySelector(".headerr")
+let access = document.querySelector (".container")
+let acce = document.querySelector (".headerr")
+let foot = document.querySelector (".footerr")
 
 /* -------------------------------------------------------------------------- */
 /*                                  somestyle                                 */
 /* -------------------------------------------------------------------------- */
-access.style.display="flex";
-access.style.flexWrap="wrap";
-access.style.justifyContent="space-between";
+access.style.display= "flex";
+access.style.flexWrap= "wrap";
+access.style.justifyContent= "space-between";
 /* -------------------------------------------------------------------------- */
 /*                                endsomestyle                                */
 /* -------------------------------------------------------------------------- */
+
+
+let logo =document.createElement("img")
+logo.classList="logo"
+logo.src="tvm-header-logo.png"
+access.append(logo)
+
+let phott =document.createElement("img")
+phott.classList="immgg"
+phott.src="true-detective-logo-font-free-download.jpg"
+access.append(phott)
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    search                                   */
+/* -------------------------------------------------------------------------- */
+
+let inputt =document.querySelector("#inputhead")
+let lab = document.createElement("label")
+lab.classList="labbel"
+ let buttonn = document.createElement("button")
+ buttonn.classList="bbutton"
+inputt.addEventListener("keyup" ,()=>{
+    let inputt =document.querySelector("#inputhead")
+    inputt=inputt.value.toLowerCase()
+    console.log(inputt);
+    let num = 0;
+    let me =document.getElementsByClassName("cards")
+    for(let i=0 ; i<me.length ; i++){
+        if(!me[i].innerHTML.toLowerCase().includes(inputt)){
+     me[i].style.display="none";
+   }else{
+     me[i].style.display="block";
+    num++;
+  }
+
+    }
+lab.innerHTML=`${num} / ${me.length}`
+    
+}
+)
+acce.append(lab)
+ 
+/* -------------------------------------------------------------------------- */
+/*                                end of search                               */
+/* -------------------------------------------------------------------------- */
+
 
  
 const myfunc = async () =>{
@@ -19,6 +66,7 @@ const myfunc = async () =>{
 //let myapi = await axios.get( "https://api.tvmaze.com/shows/5/episodes ")
 const myapi =  apiapi();
 let sel = document.createElement("select")
+sel.classList="selo"
 for(let i of myapi){
  let divv = document.createElement("div")
  divv.classList="cards"
@@ -73,7 +121,7 @@ acce.append(sel)
  /* -------------------------------------------------------------------------- */
  /*                                end of select                               */
  /* -------------------------------------------------------------------------- */
- access.append(acce);
+ //access.append(acce);
  }
  catch(err){
 console.log("error",err);
@@ -81,39 +129,6 @@ console.log("error",err);
 }
 myfunc();
 
-
-
-/* -------------------------------------------------------------------------- */
-/*                                    search                                   */
-/* -------------------------------------------------------------------------- */
-
-let inputt =document.querySelector("#inputhead")
-let lab = document.createElement("label")
-inputt.addEventListener("keyup" ,()=>{
-    let inputt =document.querySelector("#inputhead")
-    inputt=inputt.value.toLowerCase()
-    console.log(inputt);
-    let num = 0;
-    let me =document.getElementsByClassName("cards")
-    for(let i=0 ; i<me.length ; i++){
-        if(!me[i].innerHTML.toLowerCase().includes(inputt)){
-     me[i].style.display="none";
-    
-   }else{
-     me[i].style.display="block";
-    num++;
-  }
-
-    }
-lab.innerHTML=`${num} / ${me.length}`
-    
-}
-)
-acce.append(lab)
- 
-/* -------------------------------------------------------------------------- */
-/*                                end of search                               */
-/* -------------------------------------------------------------------------- */
 
 function apiapi(){
   return [

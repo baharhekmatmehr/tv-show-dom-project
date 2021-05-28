@@ -1,16 +1,62 @@
+.container{
+    background-color: rgb(231, 195, 133);
+    width: 100%;
+    height: 100%;
+}
 .cards{
     border-radius: 20px 20px;
     background-color: black;
-    color: red;
+    color:rgb(217, 189, 142);
      width: 300px;
      margin-top: 50px;
      text-align: center ;
      cursor: grab;
-   
 }
+
 .imagee{
     border-radius: 20px 20px;
 }
+
+.immgg{
+    border-radius: 20px 20px;
+    height: 100px;
+    width: 100%;
+}
+.logo{
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 70px;
+}
 .acces{
     margin-top: 1px;
+}
+.headerr{
+ margin-top: 4px;
+}
+.selo{
+    border-radius: 20px;
+    border-color:rgb(217, 189, 142);
+    background-color:rgb(217, 189, 142);
+
+}
+
+.headerr{
+    margin-top: 20px;
+    height: 100px;
+    
+    
+}
+/* .labbel{
+    border-radius: 20px;
+} */
+#inputhead{
+    border-radius: 20px;
+    border-color:rgb(217, 189, 142);
+    background-color:rgb(217, 189, 142);
+
+}
+.bbutton{
+    border-radius: 20px;
+    border-color: lightseagreen;
 }
